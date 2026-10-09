@@ -1,6 +1,11 @@
-import * as Device from 'expo-device';
-import { Platform, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
+import {
+  Image,      
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 
 import { router } from 'expo-router';
 
@@ -9,70 +14,100 @@ import Header from '../components/Header';
 import PrimaryButton from '../components/PrimaryButton';
 
 export default function HomeScreen() {
+
   return (
-    <ThemedView style={styles.container}>
-      <SafeAreaView style={styles.safeArea}>
-        <ThemedView style={styles.heroSection}>
-          <AnimatedIcon />
-          <ThemedText type="title" style={styles.title}>
-            Welcome to&nbsp;Expo
-          </ThemedText>
-        </ThemedView>
+    <View style={styles.container}>
 
-        <ThemedText type="code" style={styles.code}>
-          get started
-        </ThemedText>
+      <Header />
 
-        <ThemedView type="backgroundElement" style={styles.stepContainer}>
-          <HintRow
-            title="Try editing"
-            hint={<ThemedText type="code">src/app/index.tsx</ThemedText>}
-          />
-          <HintRow title="Dev tools" hint={getDevMenuHint()} />
-          <HintRow
-            title="Fresh start"
-            hint={<ThemedText type="code">npm run reset-project</ThemedText>}
-          />
-        </ThemedView>
+      <ScrollView
+            showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.content}
+        style={styles.scrollContainer}
+      >
 
-        {Platform.OS === 'web' && <WebBadge />}
-      </SafeAreaView>
-    </ThemedView>
+        <Image
+          source={require('./primeira foto.jpg')}
+              style={styles.heroImage}
+        />
+
+        <Text style={styles.smallTitle}>
+          POSITIVE PRACTICE.
+        </Text>
+
+        <Text style={styles.title}>
+         Results {'\n'}
+          Proven.
+        </Text>
+
+        <Text style={styles.description}>
+          Learn to better care for and understand
+          animals through practical and
+          positive education.
+        </Text>
+
+        <PrimaryButton
+           title="Start Your Journey"
+  onPress={() => router.push('/journey')}
+
+        />
+
+      </ScrollView>
+
+      <BottomNav
+        onHome={() => router.push('/')}
+        onCourses={() => router.push('/programs'as any)}
+        onContact={() => router.push('/contact'as any)}
+      />
+
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'row',
+    backgroundColor: '#FFF9D9',
   },
-  safeArea: {
+
+  content: {
+    paddingHorizontal: 16,
+    paddingBottom: 30,
+  },
+
+  scrollContainer: {
     flex: 1,
-    paddingHorizontal: Spacing.four,
-    alignItems: 'center',
-    gap: Spacing.three,
-    paddingBottom: BottomTabInset + Spacing.three,
-    maxWidth: MaxContentWidth,
+     marginBottom: 70,
   },
-  heroSection: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    paddingHorizontal: Spacing.four,
-    gap: Spacing.four,
+
+  heroImage: {
+    width: '100%',
+    height: 260,
+    borderRadius: 25,
+    marginBottom: 25,
   },
+
+  smallTitle: {
+    fontSize: 8,
+    fontWeight: '700',
+    color: '#2A9D78',
+    marginBottom: 5,
+  },
+
   title: {
-    textAlign: 'center',
+    fontSize: 31,
+    lineHeight: 31,
+    fontWeight: '800',
+    color: '#173B4A',
+    marginBottom: 15,
   },
-  code: {
-    textTransform: 'uppercase',
+
+  description: {
+    fontSize: 13,
+    lineHeight: 19,
+    color: '#4C5A5E',
+    marginBottom: 20,
   },
-  stepContainer: {
-    gap: Spacing.three,
-    alignSelf: 'stretch',
-    paddingHorizontal: Spacing.three,
-    paddingVertical: Spacing.four,
-    borderRadius: Spacing.four,
-  },
+
 });
