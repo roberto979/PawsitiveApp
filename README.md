@@ -1,56 +1,98 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# Pawsitive Pet Academy – Mobile Application 🐾🎓
 
-## Get started
+**Tagline:** *Caring for pets. Building confident owners.*  
+**Location:** Durban, KwaZulu-Natal, South Africa  
+**Module:** Work-Integrated Learning (WIL) – XHAW5112 (Task 3)  
+**Group:** 3 Peas In a Pod
 
-1. Install dependencies
+---
 
+## 📱 Project Overview
+
+The **Pawsitive Pet Academy Mobile Application** is a cross-platform React Native (Expo) application built to provide omnichannel parity with the Pawsitive Pet Academy website. Designed for pet owners, kennel staff, veterinary assistants, and aspiring pet entrepreneurs, the app enables seamless course discovery, automated multi-course fee estimation with South African VAT (15%), daily pet care tracking, and validated student inquiries.
+
+---
+
+## ✨ Key Features
+
+- **Official 7-Course Institutional Catalogue:**
+  - **Professional Development Programmes (12 Weeks – R1,500 each):** Canine Obedience Training, Pet Grooming, Animal Behaviour, and Pet Business Management.
+  - **Practical Short Courses (6 Weeks – R750 each):** Puppy Care, Pet First Aid, and Basic Dog Walking.
+- **Automated Fee Estimator & Discount Engine:**
+  - Real-time subtotal calculation using array reduction.
+  - Tiered volume discounts: **0%** (1 course), **5%** (2 courses), **10%** (3 courses), and **15%** (4+ courses).
+  - Automatic **15% VAT** breakdown and instant quotation summary handoff to registration.
+- **Validated Inquiry Form:** Client-side error handling with regex validation for email addresses and South African phone numbers (`+27` normalization).
+- **Animal Care Diary:** Interactive daily log for tracking feeding, exercise, grooming, and health observations.
+- **Brand Identity Compliance:** Styled with official brand colours — **Terracotta (`#DA6F43`)**, **Teal (`#268D81`)**, **Navy (`#285062`)**, and **Cream (`#f8f9fa`)**.
+
+---
+
+## 📂 Project Structure
+
+```text
+PawsitiveApp-master/
+├── assets/                     # App icons, splash screens, and imagery
+├── src/
+│   ├── app/                    # Expo Router screens
+│   │   ├── index.tsx           # Home screen
+│   │   ├── programs.tsx        # Master course catalogue & Fee Calculator
+│   │   ├── course.tsx          # Dynamic course syllabus & fee details
+│   │   ├── registration.tsx    # Quotation & enrollment confirmation
+│   │   ├── contact.tsx         # Validated inquiry form & Durban campus info
+│   │   ├── diary.tsx           # Animal Care Diary tool
+│   │   ├── EducationBenefits.tsx
+│   │   ├── experience.tsx
+│   │   └── journey.tsx
+│   ├── components/             # Reusable UI components (Header, BottomNav, PrimaryButton)
+│   └── constants/
+│       └── coursesData.ts      # Centralized 7-course dataset & pricing
+├── CHANGELOG.md                # Version history and Task 3 updates
+├── package.json                # Dependencies and Expo scripts
+└── README.md                   # Project documentation
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- [Node.js](https://nodejs.org) (v18 or newer)
+- [Expo Go](https://expo.dev) app on your iOS/Android device, or an Android/iOS emulator
+
+### Installation & Running
+
+1. **Clone the repository:**
+   ```bash
+   git clone <your-mobile-repo-url>
+   cd PawsitiveApp-master
+   ```
+
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-2. Start the app
-
+3. **Start the Expo development server:**
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+4. **Preview the app:**
+   - Scan the QR code displayed in the terminal using **Expo Go** (Android) or the **Camera app** (iOS).
+   - Press `w` in the terminal to run the web preview, or `a` / `i` for Android/iOS emulators.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 👥 Team Members (3 Peas In a Pod)
 
-## Get a fresh project
+- **Israa Williams (`ST10501763`)** – Team Leader (Research, Documentation & Requirements Coordination)
+- **Shaun Stroebel (`ST10507489`)** – Team Secretary & Lead Frontend Developer (Website Architecture, Styling & Calculation Logic)
+- **Reginaldo Muriame Gime (`ST10535021`)** – Application Developer (Mobile Application Build & Figma Prototyping)
 
-When you're ready, run:
+---
 
-```bash
-npm run reset-project
-```
+## 📄 License
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-### Other setup steps
-
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This project was developed for academic assessment purposes under The Independent Institute of Education (IIE) – Module XHAW5112.
